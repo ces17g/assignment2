@@ -17,14 +17,14 @@ public:
     Speedboat();
 
     explicit Speedboat(string brand, string model, string fuelType, 
-        string engineSize, int engineCount);
+        string engineSize, int engineCount=1);
 
     virtual ~Speedboat();
     int getEngineCount();
     void setNumberOfEngines(int engineSize);
     string getEngineSize();
     void setEngineSize(string engineSize);
-    virtual double mileageEstimate(double time);
+    virtual double mileageEstimate(double min);
     virtual string toString();
 };
 

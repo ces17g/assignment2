@@ -8,20 +8,21 @@ Speedboat::Speedboat() {
     setModel("VTx");
 }
 
-Speedboat::Speedboat(string brand, string model, string fuelType, string engineSize, int engineCount=1) {
+Speedboat::Speedboat(string brand, string model, string fuelType, string engineSize, int engineCount) {
     setBrand(brand);
     setModel(model);
     setFuelType(fuelType);
     setEngineSize(engineSize);
+    setNumberOfEngines(engineCount);
 }
 
 Speedboat::~Speedboat() = default;
 
-int Jet::getEngineCount() {
+int Speedboat::getEngineCount() {
     return numberOfEngines;
 }
 
-void Jet::setNumberOfEngines(int engineCount) {
+void Speedboat::setNumberOfEngines(int engineCount) {
     if ( (engineCount > 0) && (engineCount < 6) ) { numberOfEngines=engineCount; }
 }
 
@@ -39,10 +40,10 @@ void Speedboat::setEngineSize(string engineSize) {
 
 }
 
-double Speedboat::mileageEstimate(double time) {
+double Speedboat::mileageEstimate(double min) {
     srand( time(0) );
-    double mileage = (rand()%10 + 5) * time;
-    if (engineCount > 2)
+    double mileage = (rand()%10 + 5) * min;
+    if (numberOfEngines > 2)
         mileage *= 1.055;
     if (fuelType == "electricity")
 	mileage *= 1.005;
@@ -51,5 +52,5 @@ double Speedboat::mileageEstimate(double time) {
 
 string Speedboat::toString() {
     return "-> Speedboat\n" + PoweredVehicle::toString() + "\n\tEngine Count: " +
-           getEngineCount() + "\n\tEngine Size: " + getEngineSize();
+           to_string(getEngineCount()) + "\n\tEngine Size: " + getEngineSize();
 }
