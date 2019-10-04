@@ -1,3 +1,4 @@
+////////////////////////////////////////////////////
 a)
 Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
@@ -8,14 +9,52 @@ Total 3 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/ces17g/assignment2
    f4975e5..31593d2  master -> master
+////////////////////////////////////////////////////
+
 b) 
 7
 git rev-list --all --count
+////////////////////////////////////////////////////
+
 c)
+commit e424a923e80da4772ca789591ef3326230062a71
+Author: Esteban Parra <estebanpr014@gmail.com>
+Date:   Wed Sep 25 18:13:30 2019 -0400
+
+git log .gitignore
+////////////////////////////////////////////////////
+
 d)
+Git repositories use branching to allow developers to fix bugs and develop new features without commiting changes to the main source code.
+
+Branching also allows developers to revert back on a released version of the code if bugs are found.
+////////////////////////////////////////////////////
+
 e)
+git log is a log of the committed project history made to the repository
+
+git status is the differences between the index file and current HEAD commit. It displays if my master/index file is behind a commit, the stages of the files, and files that are untracked.
+////////////////////////////////////////////////////
+
 f)
+git log -- Vehicle.h
+////////////////////////////////////////////////////
+
 g)
+git log --grep=file
+////////////////////////////////////////////////////
+
 h)
-i)
-j)
+Inheritance allows objects or classes to inherit characteristics of other objects or classes.
+Polymorphism allows objects of different types to be accessed through the same class interface.
+Encapsulation is the bundling of data and methods that operate on said data i.e. a class. 
+////////////////////////////////////////////////////
+
+i) The "Dictator and Lieutenant" is like the "Integration Manager" workflow except it is meant for larger teams. The developers in "Dictator and Lieutenant" report the changes to the "Lieutenant". Once the changes are satisfactory, they are reported to the "Dictator" who pushes the changes to the blessed repository.
+////////////////////////////////////////////////////
+
+j) The benefit of the "Dictator and Lieutenant" would be that tasks would be delegated amongst the developers so that fewer Devs are working on the same project. Another benefit would be that the commits would be handled by the Lieutenant then Dictator to ensure that the commits are beneficial and that merging branches is less likely of an issue.
+////////////////////////////////////////////////////
+
+OOP Principles
+The driving simulator prototype uses both polymorphism and encapsulation. In main.cpp, a Vehicle** array is created, which is able to hold various classes which inherit Vehicle. Encapsulation are seen in the methods (or functions) in the class. The class does its own calculations with its functions encapsulated in the class.
