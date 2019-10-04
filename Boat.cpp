@@ -1,6 +1,4 @@
-//
-// Created by Esteban Parra on 9/5/19.
-//
+// Created by Chris Santos on 10/4/19.
 
 #include "Boat.h"
 
@@ -46,10 +44,8 @@ double Boat::mileageEstimate(double time) {
     double mileage = (rand()%10 + 5) * time;
     if (engineCount > 2)
         mileage *= 1.055;
-    if (engineSize == "grande")
-        mileage *= 1.055;
     if (fuelType == "electricity")
-        mileage += mileage * 0.05;
+	mileage *= 1.005;
     return mileage;
 }
 
