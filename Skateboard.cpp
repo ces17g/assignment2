@@ -2,24 +2,23 @@
 
 #include "Skateboard.h"
 
-Skateboard::Bicycle(string brand, string model) {
+Skateboard::Skateboard(string brand, string model) {
     setBrand(brand);
     setModel(model);
 }
 
-Skateboard::~Bicycle() = default;
+Skateboard::~Skateboard() = default;
 
-double Skateboard::mileageEstimate(double time) {
+double Skateboard::mileageEstimate(double min) {
     srand( time(0) );
-    double mileage = 0.1 * (rand()%5 + 1) * time;
-    if ((time > 25) && (time < 250)){
-	srand( time(0) );
-        mileage += time / (rand()%3 + 1);
+    double mileage = 0.1 * (rand()%5 + 1) * min;
+    if ((min > 25) && (min < 250)){
+        srand( time(0) );
+        mileage += min / (rand()%3 + 1);
     }
     return mileage;
 }
 
 string Skateboard::toString() {
-    string s = "-> Skateboard\n\t";
     return "-> Skateboard\n" + Vehicle::toString();
 }

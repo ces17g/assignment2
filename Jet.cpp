@@ -8,7 +8,7 @@ Jet::Jet() {
     setModel("VTx");
 }
 
-Jet::Jet(string brand, string model, string fuelType, int engineCount=1) {
+Jet::Jet(string brand, string model, string fuelType, int engineCount) {
     setBrand(brand);
     setModel(model);
     setFuelType(fuelType);
@@ -25,10 +25,10 @@ void Jet::setNumberOfEngines(int engineCount) {
     if (engineCount > 0) { numberOfEngines=engineCount; }
 }
 
-double Jet::mileageEstimate(double time) {
-    srand( time(0) );
-    double mileage = (rand()%60 + 40) * time;
-    if ((engineCount > 2) && (fuelType == "Rocket")) {
+double Jet::mileageEstimate(double min) {
+    srand(time(0));
+    double mileage = (rand()%60 + 40) * min;
+    if ((numberOfEngines > 2) && (fuelType == "Rocket")) {
         mileage *= 1.055;
     }
     return mileage;
@@ -36,5 +36,5 @@ double Jet::mileageEstimate(double time) {
 
 string Jet::toString() {
     return "-> Jet\n" + PoweredVehicle::toString() + "\n\tNumber of Engines: " +
-           getEngineCount();
+           to_string(getEngineCount());
 }
